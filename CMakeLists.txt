@@ -178,9 +178,9 @@ endif()
 #  Platform checks.
 
 if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    set(NNG_WARN_FLAGS "-Wall -Wextra -fno-omit-frame-pointer")
+    set(NNG_WARN_FLAGS "-Wall -Wextra -fno-omit-frame-pointer -Wno-error=incompatible-pointer-types")
 elseif (CMAKE_C_COMPILER_ID MATCHES "Clang")
-    set(NNG_WARN_FLAGS "-Wall -Wextra -fno-omit-frame-pointer -Wno-microsoft-anon-tag")
+    set(NNG_WARN_FLAGS "-Wall -Wextra -fno-omit-frame-pointer -Wno-microsoft-anon-tag -Wno-error=incompatible-pointer-types")
 endif ()
 
 include(CheckSanitizer)
